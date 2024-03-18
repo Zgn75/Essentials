@@ -1,6 +1,10 @@
 #Essentials API
+class essentials():
 
-class es():
+    def roundify(n):
+        import math
+        m = 1
+        return int(math.ceil(n*m)/m)
 
     class string():
         
@@ -80,74 +84,16 @@ class es():
 
         def discord_py():
 
-            template = """from discord import *
-from discord.ext import commands
+            template = ''.join(essentials.file.read("data\\dpy.txt"))
 
-import discord
-import asyncio
-
-intents = discord.Intents().all()
-intents.message_content = True
-intents.typing = False
-intents.presences = False
-
-#Local variables
-token = "your-token"
-prefix = "your-prefix"
-
-bot = commands.Bot(command_prefix=prefix, intents=intents, help_command=None)
-
-# -------------------------------------------------------------------------
-
-# Definitions
-
-# -------------------------------------------------------------------------
-
-@bot.event
-async def on_ready():
-    print("Logged in!")
-
-@bot.event
-async def on_message(message):
-    print("Message detected at {}".format(message.channel.name))
-
-    await bot.process_commands(message)
-
-@bot.command()
-async def ping(ctx):
-    await ctx.reply("Pong!")
-
-bot.run(token)  # Where 'TOKEN' is your bot token
-
-
-# bot-invite-link
-
-"""
-
-            if es.file.read("discord.py") == None:
-                es.file.write("discord.py", template)
+            if essentials.file.read("discord.py") == None:
+                essentials.file.write("discord.py", template)
             else:
                 loop = True
                 i = 2
                 while loop:
-                    if es.file.read("discord{}.py".format(i)) == None:
-                        es.file.write("discord{}.py".format(i), template)
+                    if essentials.file.read("discord{}.py".format(i)) == None:
+                        essentials.file.write("discord{}.py".format(i), template)
                         loop = False
                     
                     i += 1
-
-
-# Functions :
-
-"""
-es.string.after("Geeks.com", ".") - returns "com"
-es.string.before("Geeks.com", ".") - returns "Geeks"
-es.file.read("text.txt") - returns text file as a str type
-es.file.write("text.txt", "text") - writes/overwrites a text file
-es.file.append("text.txt", "text") - appends items to a file
-es.file.look_for("text.txt", "item") - looks for item, returns True if found
-es.text.default() - Organizes the sentence given --> "hello this is a test " >>> "Hello this is a test"
-es.text.title()  - Capitalizes every word in the sentence given --> "hello this is a test " >>> "Hello This Is A Test"
-es.templates.discord_py() - Creates a discord py template in the folder that the program was ran
-es.exit() - Quits the program
-"""
