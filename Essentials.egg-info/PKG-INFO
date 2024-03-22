@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: Essentials
+Version: 1.0.0
+Summary: A package that covers essential functions for you
+Author: Zgn
+Author-email: zgnbusinesses@gmail.com
+Keywords: python,essentials
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Education
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Requires-Dist: essentials
+
+Discover a comprehensive package designed to encompass all the essential functions you need, tailored specifically to streamline your daily tasks and enhance your efficiency effortlessly.
