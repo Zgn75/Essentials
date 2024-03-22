@@ -3,9 +3,13 @@ Made by Zgn
 
 ## How to setup (local)
 1 - Download the latest zip file released from the releases page
+
 2 - Extract the file into a folder into your desktop
+
 3 - Open a command prompt in the folder and run ¨pip install -e .¨
+
 4 - You can now use essentials package with ¨import essentials¨
+
 
 ### Functions
 essentials.string.after("Google.com", ".") - returns "com"
