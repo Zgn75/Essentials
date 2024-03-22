@@ -1,99 +1,100 @@
-#Essentials API
-class essentials():
+__version__ = "1.0.0"
 
-    def roundify(n):
-        import math
-        m = 1
-        return int(math.ceil(n*m)/m)
+# Essentials API
 
-    class string():
-        
-        def before(text: str, kw: str):
-            return text[:text.index(kw)]
+def roundify(n):
+    import math
+    m = 1
+    return int(math.ceil(n*m)/m)
 
-        def after(text: str, kw: str):
-            return text[text.index(kw):].replace(kw,"")
+class string():
     
-    class file():
+    def before(text: str, kw: str):
+        return text[:text.index(kw)]
 
-        def read(file: str):
-            try:
-                with open(file, "r") as f:
-                    return ''.join(f.readlines())
+    def after(text: str, kw: str):
+        return text[text.index(kw):].replace(kw,"")
 
-            except:
-                return None
-        
-        def write(file: str, object: str):
-            try:
-                with open(file, "w") as f:
-                    f.write(object)
-                    return True
-            except:
-                return False
-        
-        def append(file: str, object: str):
-            try:
-                with open(file, "a") as f:
-                    f.write(object)
-                    return True
+class file():
 
-            except:
-                return None
-            
-        def look_for(file: str, object: str):
-            try:
-                with open(file, "r") as f:
-                    list = f.readlines()
-                    l_en = []
-                    for x in list:
-                        l_en.append(x.replace("\n",""))
-                    
-                    if object in l_en:
-                        return True
-                    else:
-                        return False
-                    
-            except:
-                return None
+    def read(file: str):
+        try:
+            with open(file, "r") as f:
+                return ''.join(f.readlines())
+
+        except:
+            return None
     
-    def exit():
-        exit()
+    def write(file: str, object: str):
+        try:
+            with open(file, "w") as f:
+                f.write(object)
+                return True
+        except:
+            return False
+    
+    def append(file: str, object: str):
+        try:
+            with open(file, "a") as f:
+                f.write(object)
+                return True
 
-    class text():
-
-        def default(text: str):
-            return text.capitalize().rstrip()
+        except:
+            return None
         
-        def title(text: str):
-
-            t: str= ""
-            i = 0
-
-            for x in text.split():
-                if i == len(text.split()) - 1:
-                    t += x.capitalize()
+    def look_for(file: str, object: str):
+        try:
+            with open(file, "r") as f:
+                list = f.readlines()
+                l_en = []
+                for x in list:
+                    l_en.append(x.replace("\n",""))
+                
+                if object in l_en:
+                    return True
                 else:
-                    t += x.capitalize() + " "
+                    return False
+                
+        except:
+            return None
 
-                i += 1
-            
-            return t.rstrip()
-        
-    class templates():
+def exit():
+    exit()
 
-        def discord_py():
+class text():
 
-            template = ''.join(essentials.file.read("data\\dpy.txt"))
+    def default(text: str):
+        return text.capitalize().rstrip()
+    
+    def title(text: str):
 
-            if essentials.file.read("discord.py") == None:
-                essentials.file.write("discord.py", template)
+        t: str= ""
+        i = 0
+
+        for x in text.split():
+            if i == len(text.split()) - 1:
+                t += x.capitalize()
             else:
-                loop = True
-                i = 2
-                while loop:
-                    if essentials.file.read("discord{}.py".format(i)) == None:
-                        essentials.file.write("discord{}.py".format(i), template)
-                        loop = False
-                    
-                    i += 1
+                t += x.capitalize() + " "
+
+            i += 1
+        
+        return t.rstrip()
+
+class templates():
+
+    def discord_py():
+
+        template = ''.join(file.read("data\\dpy.txt"))
+
+        if file.read("discord.py") == None:
+            file.write("discord.py", template)
+        else:
+            loop = True
+            i = 2
+            while loop:
+                if file.read("discord{}.py".format(i)) == None:
+                    file.write("discord{}.py".format(i), template)
+                    loop = False
+                
+                i += 1
