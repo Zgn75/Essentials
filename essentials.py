@@ -20,7 +20,19 @@ class file():
     def read(file: str):
         try:
             with open(file, "r") as f:
+                if ''.join(f.readlines()) == "":
+                    return None
                 return ''.join(f.readlines())
+
+        except:
+            return None
+    
+    def readlines(file: str):
+        try:
+            with open(file, "r") as f:
+                if str(f.readlines()) == "[]":
+                    return None
+                return f.readlines()
 
         except:
             return None
@@ -57,9 +69,6 @@ class file():
                 
         except:
             return None
-
-def exit():
-    exit()
 
 class text():
 
