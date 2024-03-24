@@ -1,6 +1,8 @@
 # Essentials API
 Made by Zgn
 
+Since the package is not released to the public, if you want to use it before it releases, follow the steps below.
+
 ## How to setup (local)
 1 - Download the latest zip file released from the releases page
 
@@ -8,7 +10,7 @@ Made by Zgn
 
 3 - Open a command prompt in the folder and run ¨pip install -e .¨
 
-4 - You can now use essentials package with ¨import essentials¨
+4 - You can now use essentials package by putting essentials.py into your folder where you have your project on with ¨import essentials¨
 
 
 ### Functions
