@@ -14,24 +14,26 @@ Since the package is not released to the public, if you want to use it before it
 
 
 ### Functions
-essentials.string.after("Google.com", ".") - returns "com"
+string.after("Google.com", ".") - returns "com"
 
-essentials.string.before("Google.com", ".") - returns "Google"
+string.before("Google.com", ".") - returns "Google"
 
-essentials.file.read("text.txt") - returns text file as a str type
+file.read("text.txt") - returns text file as a str type
 
-essentials.file.write("text.txt", "text") - writes/overwrites a text file
+file.readlines("text.txt) - returns text file as a list type
 
-essentials.file.append("text.txt", "text") - appends items to a file
+file.write("text.txt", "text") - writes/overwrites a text file
 
-essentials.file.look_for("text.txt", "item") - looks for string, returns True if found
+file.append("text.txt", "text") - appends items to a file
 
-essentials.text.default() - Organizes the sentence given --> "hello this is a test " >>> "Hello this is a test"
+file.look_for("text.txt", "item") - looks for string, returns True if found
 
-essentials.text.title()  - Capitalizes every word in the sentence given --> "hello this is a test " >>> "Hello This Is A Test"
+text.default() - Organizes the sentence given --> "hello this is a test " >>> "Hello this is a test"
 
-essentials.roundify(2.5) - Returns the int value of "3"
+text.title()  - Capitalizes every word in the sentence given --> "hello this is a test " >>> "Hello This Is A Test"
 
-essentials.templates.discord_py() - Creates a discord py template in the folder that the program was ran
+roundify(2.5) - Returns the int value of "3"
 
-essentials.exit() - Quits the program
+templates.discord_py() - Creates a discord py template in the folder that the program was ran
+
+exit() - Quits the program
